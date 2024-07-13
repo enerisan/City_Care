@@ -1,4 +1,5 @@
-# city-care
+# City Care
+This project was born as a response to the last checkpoint of the Web and Mobile Web Developer training at Wild Code School. The training took place between 26 February and 26 July 2024. 
 
 This project uses Harmonia. Harmonia is a framework meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
 It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
