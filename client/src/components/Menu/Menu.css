@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "zen";
+  src: url("/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+
+.menu {
+  height: 50px;
+  width: 50px;
+  margin-right: 0.5em;
+  position: relative;
+}
+
+.navbarList {
+  list-style: none;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: -100vw;
+  bottom: 0;
+  height: 100%;
+  padding: 2em;
+  visibility: hidden;
+  transition: all 0.7s ease-out;
+}
+.menu.active .navbarList {
+  left: 0;
+  width: 100vw;
+  visibility: visible;
+}
+.navbarLink {
+  display: block;
+  text-decoration: none;
+  font-family: "zen";
+  margin: 2em 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.navbarLink:hover {
+  color: black;
+}
+
+.burgerMenu {
+  display: block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+}
+
+.burgerMenu:hover {
+  cursor: pointer;
+}
+
+.burgerLine,
+.burgerLine::before,
+.burgerLine::after {
+  display: block;
+
+  height: 3px;
+  position: relative;
+  border-radius: 3px;
+  background-color: white;
+}
+.burgerLine::before,
+.burgerLine::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.9s ease-in-out;
+}
+.burgerLine::before {
+  transform: translateY(-12px);
+}
+.burgerLine::after {
+  transform: translateY(12px);
+}
+.menu.active .burgerLine::before {
+  width: 40px;
+  transform: rotate(135deg);
+}
+.menu.active .burgerLine::after {
+  width: 40px;
+  transform: rotate(-135deg);
+}
+.menu.active .burgerLine {
+  width: 0;
+  background: transparent;
+  transition: 0.4s;
+}
+.menu.inactive .burgerLine {
+  width: 30px;
+  transition: 0.4s;
+}
+.menu.inactive .burgerLine::before {
+  width: 40px;
+}
+.menu.inactive .burgerLine::after {
+  width: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .menu.active .navbarList {
+    left: 0;
+    width: 25vw;
+  }
+}

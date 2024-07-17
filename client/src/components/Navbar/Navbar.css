@@ -1,4 +1,24 @@
-* {
+.navbar-container {
   display: flex;
-  flex: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 1rem;
+  justify-content: space-around;
+  gap: 7rem;
+  background-color: #004aad;
+}
+
+.logo-citycare {
+  width: 10rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-container {
+    justify-content: left;
+
+    gap: 80rem;
+  }
+  .logo-citycare {
+    display: none;
+  }
 }

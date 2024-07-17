@@ -21,7 +21,7 @@ create table user (
     email varchar(255) not null unique,
     password varchar(255) not null,
     geolocation BOOLEAN DEFAULT TRUE,
-    role_id int unsigned not null,
+    role_id int unsigned DEFAULT 2,
     foreign key (role_id) references role (id)
 );
 

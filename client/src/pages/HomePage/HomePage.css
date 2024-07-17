@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "zen";
+  src: url("/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+
+.body-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+.logo-care {
+  width: 75%;
+}
+.home-titre {
+  color: white;
+  font-family: "zen";
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.connection-container {
+  margin-top: 2rem;
+}
+
+.form-connection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-connection input {
+  background-color: white;
+  padding-bottom: 1rem;
+  border: none;
+  border-bottom: solid 1px;
+  margin-bottom: 1rem;
+  font-size: 15px;
+  font-family: "zen";
+  padding: 0.5rem 1rem;
+}
+
+.input-field {
+  margin: 0;
+}
+
+.fleche-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 8rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fleche-img {
+  width: 10rem;
+}
+.home-subtitle {
+  color: white;
+}
+.inscrivez-vous {
+  cursor: pointer;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .body-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+  }
+
+  .logo-care {
+    width: 50%;
+  }
+
+  .home-titre {
+    margin-top: 1rem;
+    font-size: 3rem;
+  }
+
+  .connection-container {
+    margin-top: 1rem;
+  }
+  .form-connection input {
+    background-color: white;
+    padding-bottom: 1rem;
+    border: none;
+    border-bottom: solid 1px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-family: "zen";
+    padding: 0.5rem 1rem;
+  }
+
+  .fleche-btn {
+    width: 20rem;
+    height: 10rem;
+  }
+  .fleche-img {
+    width: 20rem;
+  }
+
+  .home-subtitle {
+    font-size: 3rem;
+  }
+}

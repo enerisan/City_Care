@@ -6,9 +6,14 @@
   background-color: #004aad;
 }
 
+@font-face {
+  font-family: "zen";
+  src: url("/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+
 .hello {
-  font-family: "now-light";
-  margin: 1rem;
-  color: #0e4749;
-  font-weight: bold;
+  font-family: "zen";
+  padding: 1rem;
+  font-size: 3rem;
+  color: white;
 }

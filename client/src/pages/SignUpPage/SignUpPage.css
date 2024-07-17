@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "zen";
+  src: url("/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+.inscription-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "zen";
+}
+.avatar {
+  width: 40%;
+}
+.inscription-titre {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.form-sign {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.form-sign input {
+  background-color: white;
+  color: #e88d67;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-sign {
+  background-color: #ffc42b;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .avatar {
+    width: 15%;
+  }
+  .inscription-titre {
+    font-size: 3rem;
+    color: white;
+  }
+
+  .form-sign {
+    width: 40%;
+    margin-top: 1rem;
+  }
+
+  .form-sign input {
+    font-size: 2rem;
+  }
+
+  .btn-sign {
+    font-size: 2rem;
+  }
+}

@@ -11,7 +11,7 @@ import BoardPage from "./pages/BoardPage/BoardPage";
 const router = createBrowserRouter([
   {
     element: <App />,
-    /* children: [
+    children: [
       {
         path: "/",
         element: <HomePage />,
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         path: "*",
         element: <h1>Page not found</h1>,
       },
-    ], */
+    ],
   },
 ]);
 
