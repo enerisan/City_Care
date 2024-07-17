@@ -25,20 +25,42 @@ class UserRepository extends AbstractRepository {
   async read(id) {
     const [rows] = await this.database.query(
       `SELECT
-          user.firstname,
-        user.lastname,
-        user.identity_card,
-        user.email,
-        user.password,
-        user.role_id,
-        user.id,
-        
-      FROM
-        user u
-        
-      WHERE
-        u.id =?`,
+          firstname,
+          lastname,
+          identity_card,
+          email,
+          password,
+          role_id
+        FROM
+          ${this.table}
+        WHERE
+          id = ?`,
       [id]
+    );
+
+    return rows[0];
+  }
+
+  async readIncidentsByUserId(userId) {
+    const [rows] = await this.database.query(
+      `SELECT
+          id AS incident_id,
+          title,
+          latitude,
+          longitude,
+          street,
+          street_number,
+          zip_code,
+          image,
+          description,
+          date,
+          category_id,
+          status_id
+        FROM
+          incident
+        WHERE
+          user_id = ?`,
+      [userId]
     );
 
     return rows;

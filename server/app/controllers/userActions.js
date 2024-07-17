@@ -22,6 +22,26 @@ const read = async (req, res, next) => {
   }
 };
 
+const readUserAndIncidents = async (req, res, next) => {
+  try {
+    const user = await tables.user.read(req.params.id);
+    if (user == null) {
+      res.sendStatus(404);
+    }
+    const incident = await tables.user.readIncidentsByUserId(req.params.id);
+    if (incident == null) {
+      res.sendStatus(404);
+    }
+    const data = {
+      user,
+      incident,
+    };
+    res.json(data);
+  } catch (err) {
+    next(err);
+  }
+};
+
 const edit = async (req, res, next) => {
   const user = { ...req.body, id: req.params.id };
   try {
@@ -56,6 +76,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
+  readUserAndIncidents,
   edit,
   add,
   destroy,

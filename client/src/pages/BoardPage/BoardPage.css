@@ -26,7 +26,7 @@
   margin-bottom: 1rem;
   font-family: "zen";
   text-align: left;
-  widht: 80%;
+  width: 80%;
   height: 20rem;
 }
 .card-signalement {
@@ -39,8 +39,7 @@
   margin-bottom: 1rem;
   font-family: "zen";
   text-align: left;
-  widht: 80%;
-  height: 20rem;
+  width: 80%;
 }
 .img-avatar {
   width: 50%;
@@ -72,7 +71,9 @@
   height: rem;
   margin-top: 1rem;
 }
-
+.infos-incident {
+  margin-bottom: 1rem;
+}
 .signalement-btn {
   background-color: white;
   padding: 0.5rem;
@@ -122,26 +123,23 @@
     font-size: 2rem;
     display: flex;
     flex-direction: row;
-
     width: 69%;
     padding-left: 5rem;
     margin: 0;
     justify-content: left;
     gap: 10rem;
-    border: 1px solid red;
   }
 
   .nom-email {
-    widht: 50%;
+    width: 50%;
   }
 
   .pass-password {
-    widht: 50%;
+    width: 50%;
   }
 
   .modifier-btn {
     font-size: 2rem;
-    border: 1px solid red;
   }
 
   .card-signalement {
@@ -149,26 +147,26 @@
     flex-direction: row;
     gap: 3rem;
     align-items: end;
-    padding-bottom: 3rem;
+    padding: 1rem;
   }
 
   .infos-incident {
     font-size: 2rem;
     padding-left: 2rem;
-    border: 1px solid red;
     width: 40%;
+    height: auto;
+    margin: 0;
+    padding: 0;
   }
 
   .img-incident {
-    width: 18%;
+    width: 30%;
     margin-left: 1.5rem;
-    border: 1px solid red;
   }
 
   .status {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding-left: 5rem;
-    border: 1px solid red;
   }
 
   .signalement-btn {

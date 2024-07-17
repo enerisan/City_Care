@@ -27,6 +27,8 @@ const router = createBrowserRouter([
       {
         path: "board/:id",
         element: <BoardPage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3310/api/user/${params.id}`),
       },
 
       {

@@ -1,23 +1,61 @@
+/* eslint-disable camelcase */
+
 import "./BoardPage.css";
 
+import axios from "axios";
+import { useEffect } from "react";
+import { useLoaderData, useOutletContext, useNavigate } from "react-router-dom";
+
 export default function BoardPage() {
+  const navigate = useNavigate();
+  const { currentUser } = useOutletContext();
+  const user = useLoaderData();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/auth/checkauth`,
+          {
+            withCredentials: true,
+          }
+        );
+        const authenticatedUser = response.data.user;
+        if (!authenticatedUser || authenticatedUser.id !== currentUser.id) {
+          navigate("/");
+        }
+      } catch (e) {
+        console.error(e);
+        navigate("/");
+      }
+    };
+
+    checkAuth();
+  }, [currentUser, navigate]);
+
+  if (!currentUser) {
+    return navigate("/");
+  }
+
+  const { firstname, lastname, identity_card, email } = user.user;
+  const incidents = user.incident;
+
   return (
     <div className="board-body">
       <div className="board-container">
         <h1 className="board-titre">MES INFORMATIONS</h1>
         <div className="card-infos">
-          <img
-            src="../../../public/images/city (3).png"
-            alt="avatar"
-            className="img-avatar"
-          />
+          <img src="/images/city (3).png" alt="avatar" className="img-avatar" />
           <div className="infos-user">
             <div className="nom-email">
-              <p> Lois Lane</p>
-              <p>lane@dailyplanet.com</p>
+              <p>
+                {" "}
+                {firstname} {lastname}
+              </p>
+              <p>{email}</p>
             </div>
             <div className="pass-password">
-              <p>65616516516</p>
+              <p>Passport : {identity_card}</p>
               <p>**********</p>
             </div>
           </div>
@@ -27,20 +65,23 @@ export default function BoardPage() {
           </button>
         </div>
         <h1 className="board-titre">MES SIGNALEMENTS</h1>
-        <div className="card-signalement">
-          <img
-            className="img-incident"
-            src="../../../public/images/lantern-3803270_640.jpg"
-            alt="incident"
-          />
-          <div className="infos-incident">
-            <p> Lampadaire cassé</p>
-            <p>24 rue des chercherus d´alternance</p>
-            <p>01/06/2024</p>
+        {incidents.map((incident) => (
+          <div className="card-signalement" key={incident.incident_id}>
+            <img className="img-incident" src={incident.image} alt="incident" />
+            <div className="infos-incident">
+              <p>{incident.title}</p>
+              <p>{`${incident.street_number} ${incident.street}`}</p>
+              <p>{incident.zip_code}</p>
+              <p>{incident.date}</p>
+              <p>{incident.description}</p>
+            </div>
+            <div className="status">
+              {incident.status_id === 3 && "🟡 RÉSOLU"}
+              {incident.status_id === 2 && "⚪ EN COURS"}
+              {incident.status_id === 1 && "⚪ ENVOYÉ"}
+            </div>
           </div>
-
-          <div className="status">⚪ ENVOYÉ 🟡 EN COURS ⚪ RÉSOLU</div>
-        </div>
+        ))}
       </div>
       <navLink type="submit" className="signalement-btn">
         AJOUTER UN SIGNALEMENT

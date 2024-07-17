@@ -4,7 +4,7 @@ const router = express.Router();
 
 const {
   browse,
-  read,
+  readUserAndIncidents,
   edit,
   add,
   destroy,
@@ -15,7 +15,7 @@ const hashPassword = require("../../../services/hashPassword");
 
 router.get("/", browse);
 
-router.get("/:id", read);
+router.get("/:id", readUserAndIncidents);
 
 router.put("/:id", edit);
 

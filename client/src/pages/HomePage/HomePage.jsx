@@ -16,13 +16,15 @@ export default function HomePage() {
     formState: { errors },
   } = useForm();
 
-  const express = import.meta.env.VITE_API_URL;
-
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post(`${express}/api/auth/login`, data, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        "http://localhost:3310/api/auth/login",
+        data,
+        {
+          withCredentials: true,
+        }
+      );
       setCurrentUser(response.data.user);
 
       navigate(`/board/${response.data.user.id}`);
@@ -79,11 +81,7 @@ export default function HomePage() {
           {errors.password && <span> {errors.password.message}</span>}
 
           <button className="fleche-btn" type="submit">
-            <img
-              className="fleche-img"
-              src="../../../public/images/fleche.png"
-              alt="fleche"
-            />
+            <img className="fleche-img" src="/images/fleche.png" alt="fleche" />
           </button>
         </form>
         <h2 className="home-subtitle">
