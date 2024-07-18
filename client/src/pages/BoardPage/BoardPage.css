@@ -41,6 +41,10 @@
   text-align: left;
   width: 80%;
 }
+
+.incident-title {
+  text-decoration: underline;
+}
 .img-avatar {
   width: 50%;
 }
@@ -84,6 +88,8 @@
   font-size: 0.8rem;
   font-weight: bold;
   font-family: "zen";
+  text-decoration: none;
+  color: black;
 }
 
 .signalement-btn:hover {

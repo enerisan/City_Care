@@ -46,11 +46,7 @@ class UserRepository extends AbstractRepository {
       `SELECT
           id AS incident_id,
           title,
-          latitude,
-          longitude,
-          street,
-          street_number,
-          zip_code,
+          address,
           image,
           description,
           date,
