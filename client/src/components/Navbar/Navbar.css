@@ -14,10 +14,8 @@
 @media screen and (min-width: 768px) {
   .navbar-container {
     justify-content: left;
-
-    gap: 80rem;
+    gap: 100rem;
   }
   .logo-citycare {
-    display: none;
   }
 }

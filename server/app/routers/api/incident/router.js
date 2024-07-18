@@ -10,11 +10,11 @@ const {
   destroy,
 } = require("../../../controllers/incidentActions");
 
-/* const validateIngredientSchema = require("../../../middlewares/validateIngredientSchema"); */
+/* const validateIncidentSchema = require("../../../middlewares/validateIncidentSchema"); */
 
 router.get("/", browse);
 router.get("/:id", read);
-router.post("/", /*  validateIngredientSchema, */ add);
+router.post("/", /*  validateIncidentSchema, */ add);
 router.put("/:id", edit);
 router.delete("/:id", destroy);
 

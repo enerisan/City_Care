@@ -1,0 +1,133 @@
+.incident-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 2.4rem;
+  gap: 1rem;
+}
+
+.title-incident {
+  font-size: 1.8rem;
+  /*   border: 1px solid red; */
+}
+
+.container-form {
+  width: 100%;
+  text-align: center;
+  /*  border: 1px solid green; */
+}
+
+.input-container {
+  /*  border: 1px solid yellow; */
+  width: 100%;
+  height: 4rem;
+  margin: rem;
+}
+
+.input-field {
+  background-color: white;
+  width: 100%;
+  height: 80%;
+  border-radius: 0.5rem;
+}
+
+.container-image {
+  /*  border: 5px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.description-incident {
+  /* border: 1px solid red; */
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.button-incident {
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+.button-incident:hover {
+  background-color: #ffc42b;
+}
+@media screen and (min-width: 768px) {
+  .incident-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: white;
+    padding: 5rem 15rem;
+  }
+
+  .title-incident {
+    font-size: 3rem;
+    /*    border: 1px solid red; */
+  }
+
+  .container-form {
+    width: 100%;
+    text-align: center;
+    /*  border: 1px solid green; */
+  }
+
+  .form-infos-img {
+    display: flex;
+    /*  border:5px solid orange; */
+  }
+
+  .input-body {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .input-container {
+    /*  border: 1px solid yellow; */
+    width: 100%;
+    height: 4rem;
+    margin: rem;
+  }
+
+  .input-field {
+    background-color: white;
+    width: 100%;
+    height: 80%;
+    border-radius: 0.5rem;
+  }
+
+  .container-image {
+    /*  border: 5px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .img-incident {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .description-incident {
+    margin: 2.8rem 0rem;
+    /*  border: 1px solid red; */
+    width: 100%;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2.8rem;
+  }
+
+  .button-incident {
+    width: 32%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: white;
+  }
+  .button-incident:hover {
+    background-color: #ffc42b;
+  }
+}

@@ -27,17 +27,25 @@ export default function Menu({ currentUser, setCurrentUser }) {
     <div className={`menu ${showLinks ? "active" : "inactive"} `}>
       <ul className="navbarList">
         <li className="navbarItem">
-          <NavLink to="" className="navbarLink" onClick={handleShowLinks}>
+          <NavLink
+            to={currentUser ? `/board/${currentUser.id}` : "/"}
+            className="navbarLink"
+            onClick={handleShowLinks}
+          >
             Mon compte
           </NavLink>
         </li>
         <li className="navbarItem">
-          <NavLink to="" className="navbarLink" onClick={handleShowLinks}>
+          <NavLink to="/" className="navbarLink" onClick={handleShowLinks}>
             Mes signalements
           </NavLink>
         </li>
         <li className="navbarItem">
-          <NavLink to="" className="navbarLink" onClick={handleShowLinks}>
+          <NavLink
+            to="/ajout-incident"
+            className="navbarLink"
+            onClick={handleShowLinks}
+          >
             Signaler un incident
           </NavLink>
         </li>

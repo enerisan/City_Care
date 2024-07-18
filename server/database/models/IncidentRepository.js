@@ -1,8 +1,8 @@
 const AbstractRepository = require("./AbstractRepository");
 
-class incidentRepository extends AbstractRepository {
+class IncidentRepository extends AbstractRepository {
   constructor() {
-    super({ table: "ingredient" });
+    super({ table: "incident" });
   }
 
   async create(incident) {
@@ -85,4 +85,4 @@ class incidentRepository extends AbstractRepository {
   }
 }
 
-module.exports = incidentRepository;
+module.exports = IncidentRepository;
