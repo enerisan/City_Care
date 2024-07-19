@@ -8,12 +8,13 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useOutletContext } from "react-router-dom";
 
-const GOOGLE_MAPS_API_KEY = "";
+const GOOGLE_MAPS_API_KEY = "AIzaSyCxWMTflu26u709AV8Ml3sXjG5XAA-xpsQ";
 
 export default function AjoutIncidentPage() {
   const [useGeolocation, setUseGeolocation] = useState(false);
   const [address, setAddress] = useState("");
   const { currentUser } = useOutletContext();
+  const [toggled, setToggled] = useState(false);
 
   useEffect(() => {
     if (useGeolocation && "geolocation" in navigator) {
@@ -66,13 +67,13 @@ export default function AjoutIncidentPage() {
     }
   };
 
-  const handleUseGeolocation = () => {
-    setUseGeolocation(true);
-  };
-
-  const handleManualEntry = () => {
-    setUseGeolocation(false);
-    setAddress("");
+  const handleToggleGeolocation = () => {
+    const newToggledState = !toggled;
+    setToggled(newToggledState);
+    setUseGeolocation(newToggledState);
+    if (!newToggledState) {
+      setAddress("");
+    }
   };
 
   return (
@@ -101,27 +102,32 @@ export default function AjoutIncidentPage() {
               )}
             </div>
 
-            <div className="input-container">
-              <button
-                type="button"
-                className="button-incident"
-                onClick={handleUseGeolocation}
-              >
-                Je veux utiliser ma géolocalisation comme adresse de l'incident.
-              </button>
-              <button
-                type="button"
-                className="button-incident"
-                onClick={handleManualEntry}
-              >
-                Je ne veux pas utiliser ma géolocalisation.
-              </button>
-            </div>
+            <div className="toggle-container">
+              <label htmlFor="geolocation-toggle" className="toggle-label">
+                Utiliser la géolocalisation:
+                <div className="btn-tg-container">
+                  <button
+                    id="geolocation-toggle"
+                    type="button"
+                    className={`toggle-btn ${toggled ? "toggled" : ""}`}
+                    onClick={handleToggleGeolocation}
+                    aria-label="Toggle Geolocation"
+                  >
+                    <div className="thumb" />
+                  </button>
 
+                  <span>
+                    {toggled
+                      ? "Géolocalisation activée"
+                      : "Géolocalisation désactivée"}
+                  </span>
+                </div>
+              </label>
+            </div>
             <div className="input-container">
               <input
                 type="text"
-                name="adresse"
+                name="address"
                 className="input-field"
                 {...register("address", {
                   required: "Ce champ est requis",
@@ -131,18 +137,21 @@ export default function AjoutIncidentPage() {
                 readOnly={useGeolocation}
                 placeholder="Adresse de l'incident"
               />
-              {errors.adresse && (
-                <span className="error-incident">{errors.adresse.message}</span>
+              {errors.address && (
+                <span className="error-incident">{errors.address.message}</span>
               )}
             </div>
 
-            <div className="input-container">
+            <div className="container-category">
               <select
                 className="input-field"
                 {...register("category_id", {
                   required: "Ce champ est requis",
                 })}
               >
+                <option value="" disabled>
+                  Catégorie
+                </option>
                 <option className="option-field" value="1">
                   trottoirs
                 </option>
@@ -196,11 +205,13 @@ export default function AjoutIncidentPage() {
               )}
             </div>
           </div>
-          <img
-            className="img-incident"
-            src="../../../public/images/img-plantilla.png"
-            alt="Ajouter"
-          />
+          <div className="container-image">
+            <img
+              className="image-incident"
+              src="/images/img-plantilla.png"
+              alt="Ajouter"
+            />
+          </div>
         </div>
         <div className="description-incident">
           <textarea

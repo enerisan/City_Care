@@ -85,7 +85,7 @@ export default function HomePage() {
           </button>
         </form>
         <h2 className="home-subtitle">
-          Pas de compte ?
+          Pas de compte ? <span> </span>
           <Link to="/inscription" className="inscrivez-vous">
             Inscrivez-vous
           </Link>

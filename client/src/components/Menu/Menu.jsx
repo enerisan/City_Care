@@ -27,19 +27,20 @@ export default function Menu({ currentUser, setCurrentUser }) {
     <div className={`menu ${showLinks ? "active" : "inactive"} `}>
       <ul className="navbarList">
         <li className="navbarItem">
+          <NavLink to="/" className="navbarLink" onClick={handleShowLinks}>
+            Accueil
+          </NavLink>
+        </li>
+        <li className="navbarItem">
           <NavLink
             to={currentUser ? `/board/${currentUser.id}` : "/"}
             className="navbarLink"
             onClick={handleShowLinks}
           >
-            Mon compte
+            Mon espace
           </NavLink>
         </li>
-        <li className="navbarItem">
-          <NavLink to="/" className="navbarLink" onClick={handleShowLinks}>
-            Mes signalements
-          </NavLink>
-        </li>
+
         <li className="navbarItem">
           <NavLink
             to="/ajout-incident"
@@ -53,7 +54,7 @@ export default function Menu({ currentUser, setCurrentUser }) {
         <li className="navbarItem">
           {currentUser ? (
             <button type="button" className="navbarLink" onClick={handleLogout}>
-              Déconexion
+              Déconnexion
             </button>
           ) : (
             <NavLink to="/" className="navbarLink" onClick={handleShowLinks}>
