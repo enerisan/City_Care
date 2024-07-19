@@ -5,6 +5,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export default function SignPage() {
   const {
@@ -14,6 +15,7 @@ export default function SignPage() {
     formState: { errors },
     reset,
   } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     const formData = { ...data };
@@ -21,7 +23,8 @@ export default function SignPage() {
     reset();
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/user`, data);
-      toast.success("Votre formulaire a bien été soumis");
+      toast.success("Votre inscription a été validée");
+      navigate("/");
     } catch (e) {
       console.error(e.response.data);
       toast.error("Une erreur es survenue, veuillez réessayer ultérieurement");
@@ -114,6 +117,7 @@ export default function SignPage() {
               "Les mots de passe ne correspondent pas",
           })}
         />
+
         <button className="btn-sign" type="submit">
           JE VALIDE
         </button>

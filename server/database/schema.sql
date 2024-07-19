@@ -28,11 +28,7 @@ create table user (
 create table incident (
     id int unsigned primary key auto_increment not null,
     title varchar(255) not null,
-    latitude FLOAT DEFAULT NULL,
-    longitude FLOAT DEFAULT NULL,
-    street VARCHAR(255),
-    street_number INT,
-    zip_code INT,
+    address text,
     image VARCHAR(255) DEFAULT '/images/lantern-3803270_640.jpg',
     description TEXT,
     date DATETIME DEFAULT NOW(),

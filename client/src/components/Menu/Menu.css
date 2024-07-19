@@ -8,6 +8,7 @@
   width: 50px;
   margin-right: 0.5em;
   position: relative;
+  z-index: 1000;
 }
 
 .navbarList {
@@ -42,7 +43,7 @@
 }
 
 .navbarLink:hover {
-  color: black;
+  text-decoration: underline;
 }
 
 .burgerMenu {
@@ -66,7 +67,7 @@
   height: 3px;
   position: relative;
   border-radius: 3px;
-  background-color: white;
+  background-color: #ffc42b;
 }
 .burgerLine::before,
 .burgerLine::after {
@@ -109,5 +110,8 @@
   .menu.active .navbarList {
     left: 0;
     width: 25vw;
+  }
+  .navbarLink {
+    border: none;
   }
 }

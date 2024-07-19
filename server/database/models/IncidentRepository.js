@@ -8,24 +8,16 @@ class IncidentRepository extends AbstractRepository {
   async create(incident) {
     const [result] = await this.database.query(
       `insert into ${this.table} ( title,
-        latitude,
-        longitude,
-        street,
-        street_number,
-        zip_code,
+       address,
         image,
         description,
         date,
         user_id,
         category_id,
-        status_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)`,
+        status_id) values (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         incident.title,
-        incident.latitude,
-        incident.longitude,
-        incident.street,
-        incident.street_number,
-        incident.zip_code,
+        incident.address,
         incident.image,
         incident.description,
         incident.date,
@@ -55,14 +47,10 @@ class IncidentRepository extends AbstractRepository {
 
   async update(incident) {
     const [result] = await this.database.query(
-      `update ${this.table} set title = ?, latitude = ?, longitude = ?, street= ?, street_number = ?, zip_code = ?, image= ?, description= ?, date = ?, user_id= ?, category_id = ?, status_id = ? where id = ?`,
+      `update ${this.table} set title = ?,  address = ?, image= ?, description= ?, date = ?, user_id= ?, category_id = ?, status_id = ? where id = ?`,
       [
         incident.title,
-        incident.latitude,
-        incident.longitude,
-        incident.street,
-        incident.street_number,
-        incident.zip_code,
+        incident.address,
         incident.image,
         incident.description,
         incident.date,

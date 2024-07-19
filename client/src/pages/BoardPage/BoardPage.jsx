@@ -4,7 +4,12 @@ import "./BoardPage.css";
 
 import axios from "axios";
 import { useEffect } from "react";
-import { useLoaderData, useOutletContext, useNavigate } from "react-router-dom";
+import {
+  useLoaderData,
+  useOutletContext,
+  useNavigate,
+  NavLink,
+} from "react-router-dom";
 
 export default function BoardPage() {
   const navigate = useNavigate();
@@ -69,9 +74,8 @@ export default function BoardPage() {
           <div className="card-signalement" key={incident.incident_id}>
             <img className="img-incident" src={incident.image} alt="incident" />
             <div className="infos-incident">
-              <p>{incident.title}</p>
-              <p>{`${incident.street_number} ${incident.street}`}</p>
-              <p>{incident.zip_code}</p>
+              <p className="incident-title">{incident.title}</p>
+              <p>{incident.address}</p>
               <p>{incident.date}</p>
               <p>{incident.description}</p>
             </div>
@@ -83,9 +87,10 @@ export default function BoardPage() {
           </div>
         ))}
       </div>
-      <navLink type="submit" className="signalement-btn">
-        AJOUTER UN SIGNALEMENT
-      </navLink>
+
+      <NavLink to="/ajout-incident" className="signalement-btn">
+        Signaler un incident
+      </NavLink>
     </div>
   );
 }
