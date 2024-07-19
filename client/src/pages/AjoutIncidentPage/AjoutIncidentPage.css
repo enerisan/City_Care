@@ -73,7 +73,6 @@
 
 .toggle-btn {
   background-color: white;
-
   border-radius: 99px;
   width: 50px;
   height: 28px;
@@ -95,7 +94,7 @@
   position: relative;
   left: 3px;
   top: 50%;
-  transform: trasnlateY(-50%);
+  transform: translateY(-50%);
 }
 
 .toggle-btn.toggled {
