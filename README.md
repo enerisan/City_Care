@@ -7,8 +7,10 @@ This project uses Harmonia. Harmonia is a framework meant to serve as a foundati
 
 It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
 ![4](https://github.com/user-attachments/assets/c643b545-6e4d-491a-a8e9-82964069cc25)
-![image](https://github.com/user-attachments/assets/0c57eee6-7d22-49c5-8361-e09e65335352)
-![image](https://github.com/user-attachments/assets/e39eab0f-7926-40b7-94f0-d15da1ae3c6f)
+![desktop_city_care_home](https://github.com/user-attachments/assets/8a46001b-8bed-4706-9bfe-44b08408f619)
+![portable_city_care_home](https://github.com/user-attachments/assets/4d1c5e8e-eef3-480c-be1f-bc2dd34cbd39)
+
+
 
 ## Stack
 
