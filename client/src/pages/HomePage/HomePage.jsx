@@ -91,6 +91,11 @@ export default function HomePage() {
           </Link>
         </h2>
       </div>
+      <img
+        src="/images/Coloré Formes Géométriques Projet Présentation.png"
+        alt="formes Géométriques"
+        className="formes"
+      />
     </div>
   );
 }
